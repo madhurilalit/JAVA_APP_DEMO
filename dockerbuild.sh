@@ -2,7 +2,7 @@
 
 echo "This is a Build docker image stage"
 dockerPwd=$1
-echo $dockerPwd
-sudo docker build -t madhurilalit/javademo:1.0 .
+buildnum=$2
+sudo docker build -t madhurilalit/javademo:$buildnum .
 sudo docker login --username madhurilalit --password $dockerPwd
-sudo docker push madhurilalit/javademo:1.0
+sudo docker push madhurilalit/javademo:$buildnum
